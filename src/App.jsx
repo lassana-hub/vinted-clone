@@ -1,11 +1,43 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import Offer from "./pages/OfferPage";
+import Header from "./components/Header";
+// import axios pour aller cherecher la data
+import axios from "axios";
+import { useState, useEffect } from "react";
 function App() {
-  return (
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          " https://lereacteur-vinted-api.herokuapp.com/offers",
+        );
+        // console.log(response.data);
+        // console.log(response.data.offers);
+        setData(response.data);
+
+        setIsLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+    fetchData();
+  }, []);
+  return isLoading ? (
+    <p>Loading data ....</p>
+  ) : (
     <>
       <Router>
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home data={data} />} />
+          <Route path="/offer/:id" element={<Offer />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
     </>
