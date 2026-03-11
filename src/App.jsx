@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
-import Offer from "./pages/OfferPage";
+import OfferPage from "./pages/OfferPage";
 import Header from "./components/Header";
 // import axios pour aller cherecher la data
 import axios from "axios";
@@ -36,7 +36,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home data={data} />} />
-          <Route path="/offer/:id" element={<Offer />} />
+          <Route path="/offer/:id" element={<OfferPage />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>

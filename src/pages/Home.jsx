@@ -10,11 +10,8 @@ const Home = ({ data }) => {
   return (
     <main>
       <h1>PAGE HOME</h1>
-
-      <OfferPage data={data.offers} />
       <Offer data={data} />
       <div className="space">
-        <Link to={`/offer/${data.offers._id}`}></Link>
         <Link to="/profile"></Link>
       </div>
       <p>

@@ -10,8 +10,7 @@ const OfferPage = () => {
   return (
     <main>
       <h1>PAGE OFFER</h1>
-      {/* <p>L'id du offer est : {currentParams.id}</p> */}
-      {}
+      <p>L'id du offer est : {currentParams.id}</p>
       <Link to="/">Back to Home page</Link>
     </main>
   );
