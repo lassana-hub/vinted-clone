@@ -3,10 +3,17 @@ import logo from "../assets/Vinted_logo.png";
 const Header = () => {
   return (
     <header>
-      <img src={logo} alt="Vinted-logo" />
+      <Link to="/">
+        <img src={logo} alt="Vinted-logo" />
+      </Link>
+      <input type="text" />
       <nav>
-        <button>s'inscrire</button>
-        <button>se connecter</button>
+        <Link to="/signup">
+          <button>s'inscrire</button>
+        </Link>
+        <Link to="/login">
+          <button>se connecter</button>
+        </Link>
         <button>ventds tes article</button>
       </nav>
     </header>

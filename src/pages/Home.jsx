@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Offer from "../components/Offer";
-import OfferPage from "./OfferPage";
 
 const Home = ({ data }) => {
   // le composant Link sert à naviguer de page en page en modifiant l'URL sans rafraichir le navigateur
