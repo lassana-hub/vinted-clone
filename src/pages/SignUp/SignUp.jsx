@@ -1,18 +1,21 @@
-import "./SignUp.css";
+import "./Signup.css";
 // importer axios pour aler chercher la data
 import axios from "axios";
 // import le js-cookie
 import Cookies from "js-cookie";
-// import useState
-import { useState } from "react";
+// import les Hooks
+import { useState, useNavigate } from "react";
 const SignUp = () => {
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newsletter, setNewsletter] = useState(false);
+
   const handleUserName = (event) => {
     const value = event.target.value;
     setUserName(value);
-    // console.log(userName); OK
+    console.log("UserName is => " + userName);
+    console.log("value is =>" + value);
   };
   const handleEmail = (event) => {
     const value = event.target.value;
@@ -26,6 +29,7 @@ const SignUp = () => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    // appeler la fonction fetcthData qui va faire le requete
     fetchData();
   };
 
@@ -38,11 +42,25 @@ const SignUp = () => {
           email: email,
           username: userName,
           password: password,
-          newsletter: true,
+          newsletter: newsletter,
         },
       );
-      console.log(response.data.token);
-      Cookies.set("token", response.data.token); // { expires: 7 }
+      // console.log(response.data.token); // OK
+
+      // si on a un token dans la réponse: on fait les étapes suivantes
+      if (response.data.token) {
+        // 1 - on le stocke dans les cookies
+        Cookies.set("userToken", response.data.token); // { expires: 7 }
+        // on change le state du button connection (pour l'affichage dans le header) :
+        setIsConnected(true);
+        setErrorMessage("");
+        // optimisation en une seule fonction :
+        // handleToken(response.data.token);
+
+        // on redirige maintenant notre utilisateur vers la page home :
+        navigate("/");
+      }
+      // sinon, on mettra une alerte
     } catch (error) {
       console.log(error);
     }
@@ -50,7 +68,7 @@ const SignUp = () => {
 
   return (
     <div className="myForm">
-      <div className="container">
+      <div className="signup-form-container">
         <h1>S'inscrire</h1>
 
         <form className="signup-form" onSubmit={handleSubmit}>
@@ -63,6 +81,7 @@ const SignUp = () => {
               placeholder="Nom d'utilisateur"
               required
               onChange={handleUserName}
+              value={userName}
             />
           </div>
           <div className="form-group">
@@ -72,6 +91,7 @@ const SignUp = () => {
               id="email"
               name="email"
               placeholder="email"
+              value={email}
               onChange={handleEmail}
             />
           </div>

@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: antiquewhite;
+  margin-bottom: 40px;
+}
+header button {
+  width: 140px;
+  height:60px;
+}
+header img {
+  width: 150px;
+
+}
+header > nav {
+  display: flex;
+  gap: 20px
+}
+header > input {
+  width: 400px;
+  height: 40px;
+}

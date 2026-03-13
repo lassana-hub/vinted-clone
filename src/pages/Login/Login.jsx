@@ -41,7 +41,7 @@ const Login = () => {
   };
   return (
     <div className="myForm">
-      <div className="container">
+      <div className="signup-form-container">
         <h1>Se connecter</h1>
 
         <form className="signup-form" onSubmit={handleSubmit}>
@@ -66,9 +66,7 @@ const Login = () => {
               onChange={handlePassword}
             />
           </div>
-          <Link to="/looged">
-            <button type="submit">Se connecter</button>
-          </Link>
+          <button type="submit">Se connecter</button>
           <p className="login-text">
             Pas encore de compte ? <a href="#">connect-toi</a>
           </p>
