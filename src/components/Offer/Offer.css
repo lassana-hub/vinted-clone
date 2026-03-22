@@ -1,0 +1,26 @@
+.profile-owner {
+    display: flex;
+    gap:5px;
+}
+.profile-owner img{
+    width:25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.offers article {
+    max-width: 100%;
+}
+.offers article > img{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+}
+.offers a {
+    width: calc((100% - 40px) /5 );
+}
+.offers section {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+}

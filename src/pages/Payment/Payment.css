@@ -1,0 +1,36 @@
+.payment {
+  background-color: #ebedee;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  height: calc(100vh - 120px);
+}
+
+.payment section {
+  width: 800px;
+  background-color: white;
+  padding: 30px;
+}
+
+.payment section:first-child {
+  border-bottom: 1px solid lightgrey;
+}
+
+.payment h1 {
+  margin-bottom: 40px;
+}
+
+.payment section > div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment span {
+  font-weight: bold;
+}
+.payment .purchase-label {
+  margin-bottom: 20px;
+  text-align: justify;
+}

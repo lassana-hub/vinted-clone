@@ -1,0 +1,54 @@
+.offer {
+  background-color: #ebedee;
+  height: 100vh;
+  padding-top: 30px;
+}
+
+.offer section {
+  display: flex;
+  justify-content: space-around;
+}
+
+.offer .offer-details-image {
+  height: 600px;
+}
+
+.offer aside {
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  padding: 40px;
+}
+
+.top-details {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 50px;
+  margin-bottom: 40px;
+}
+.offer .price {
+  font-size: 24px;
+  color: #111111;
+  line-height: 32px;
+  margin-bottom: 20px;
+}
+
+.details-line {
+  display: flex;
+  margin-bottom: 5px;
+}
+.details-line p {
+  flex: 1;
+  font-size: 14px;
+}
+.details-line p:first-child {
+  color: #999999;
+}
+
+.offer aside button {
+  width: 100%;
+  height: 40px;
+  background-color: #09b1ba;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}

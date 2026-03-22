@@ -1,0 +1,36 @@
+.publish {
+  background-color: #ebedee;
+}
+
+.publish form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.publish input[type="file"] {
+  display: none;
+}
+
+.publish section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 20px;
+}
+.publish img {
+  /* width: 200px; */
+  height: 400px;
+  object-fit: contain;
+}
+
+.publish .file-label {
+  width: 100%;
+  border: 1px dotted lightgrey;
+  height: 300px;
+  color: #7ed7db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
