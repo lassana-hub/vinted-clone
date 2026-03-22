@@ -1,54 +1,140 @@
 .offer {
   background-color: #ebedee;
-  height: 100vh;
-  padding-top: 30px;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+.offer * {
+  box-sizing: border-box;
 }
 
 .offer section {
   display: flex;
-  justify-content: space-around;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px;
 }
 
 .offer .offer-details-image {
-  height: 600px;
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  max-height: 700px;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #fff;
 }
 
 .offer aside {
-  width: 400px;
-  height: 600px;
-  background-color: white;
-  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 40px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .top-details {
-  border-bottom: 1px solid lightgray;
-  padding-bottom: 50px;
-  margin-bottom: 40px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
 }
+
 .offer .price {
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 600;
   color: #111111;
-  line-height: 32px;
-  margin-bottom: 20px;
+  line-height: 1.2;
+  margin-bottom: 24px;
 }
 
 .details-line {
   display: flex;
-  margin-bottom: 5px;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
 }
+
 .details-line p {
   flex: 1;
   font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  word-break: break-word;
 }
+
 .details-line p:first-child {
   color: #999999;
+  text-transform: uppercase;
+}
+
+.details-line p:last-child {
+  color: #666666;
+  text-align: right;
 }
 
 .offer aside button {
   width: 100%;
-  height: 40px;
+  height: 44px;
   background-color: #09b1ba;
-  color: white;
-  border-radius: 5px;
+  color: #ffffff;
   border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.offer aside button:hover {
+  background-color: #078e96;
+}
+
+.offer aside button:active {
+  transform: scale(0.98);
+}
+
+.offer aside button:focus {
+  outline: 2px solid rgba(9, 177, 186, 0.35);
+  outline-offset: 2px;
+}
+
+@media (max-width: 1024px) {
+  .offer section {
+    gap: 24px;
+  }
+
+  .offer .offer-details-image {
+    max-width: 420px;
+  }
+
+  .offer aside {
+    max-width: 360px;
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer {
+    padding: 24px 0;
+  }
+
+  .offer section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .offer .offer-details-image,
+  .offer aside {
+    max-width: 100%;
+  }
+
+  .offer aside {
+    padding: 24px 20px;
+  }
+
+  .offer .price {
+    font-size: 24px;
+  }
 }

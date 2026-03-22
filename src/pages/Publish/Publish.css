@@ -1,5 +1,23 @@
 .publish {
+  min-height: 100vh;
   background-color: #ebedee;
+  padding: 40px 0;
+}
+
+.publish * {
+  box-sizing: border-box;
+}
+
+.publish .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.publish h1 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111111;
 }
 
 .publish form {
@@ -8,29 +26,211 @@
   gap: 20px;
 }
 
+.publish section {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Upload image */
+.publish section:first-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
 .publish input[type="file"] {
   display: none;
 }
 
-.publish section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  padding: 20px;
-}
 .publish img {
-  /* width: 200px; */
-  height: 400px;
+  display: block;
+  max-width: 100%;
+  max-height: 420px;
   object-fit: contain;
+  border-radius: 8px;
 }
 
 .publish .file-label {
   width: 100%;
-  border: 1px dotted lightgrey;
-  height: 300px;
-  color: #7ed7db;
+  min-height: 220px;
+  border: 2px dashed #7ed7db;
+  border-radius: 8px;
+  color: #09b1ba;
+  background-color: #f9ffff;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  padding: 24px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.publish .file-label:hover {
+  background-color: #f1fcfc;
+  border-color: #09b1ba;
+  color: #078d95;
+}
+
+/* Champs généraux */
+.publish label {
+  font-size: 15px;
+  font-weight: 500;
+  color: #333333;
+}
+
+.publish input[type="text"],
+.publish textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 10px 0;
+  font-size: 15px;
+  color: #111111;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.publish input[type="text"]:focus,
+.publish textarea:focus {
+  border-bottom-color: #09b1ba;
+}
+
+.publish textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.publish input::placeholder,
+.publish textarea::placeholder {
+  color: #999999;
+}
+
+/* Bloc titre + description */
+.publish section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.publish section:nth-of-type(2) > div,
+.publish section:nth-of-type(3) > div,
+.publish section:nth-of-type(4) > div {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.publish section:nth-of-type(2) > div label,
+.publish section:nth-of-type(3) > div label,
+.publish section:nth-of-type(4) > div label {
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.publish section:nth-of-type(2) > div input,
+.publish section:nth-of-type(3) > div input,
+.publish section:nth-of-type(4) > div input {
+  flex: 1;
+}
+
+/* Bloc détails */
+.publish section:nth-of-type(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Bloc prix + checkbox */
+.publish section:nth-of-type(4) {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.publish section:nth-of-type(4) > input[type="checkbox"] {
+  align-self: flex-start;
+  width: 18px;
+  height: 18px;
+  accent-color: #09b1ba;
+  cursor: pointer;
+}
+
+/* Bouton submit */
+.publish button {
+  align-self: flex-end;
+  min-width: 140px;
+  height: 44px;
+  padding: 0 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #09b1ba;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.publish button:hover {
+  background-color: #078d95;
+}
+
+.publish button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .publish {
+    padding: 24px 0;
+  }
+
+  .publish h1 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .publish section {
+    padding: 18px;
+  }
+
+  .publish .file-label {
+    min-height: 180px;
+    font-size: 16px;
+  }
+
+  .publish section:nth-of-type(2) > div,
+  .publish section:nth-of-type(3) > div,
+  .publish section:nth-of-type(4) > div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .publish section:nth-of-type(2) > div label,
+  .publish section:nth-of-type(3) > div label,
+  .publish section:nth-of-type(4) > div label {
+    width: 100%;
+  }
+
+  .publish section:nth-of-type(2) > div input,
+  .publish section:nth-of-type(3) > div input,
+  .publish section:nth-of-type(4) > div input {
+    width: 100%;
+  }
+
+  .publish button {
+    width: 100%;
+    align-self: stretch;
+  }
 }

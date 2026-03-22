@@ -1,36 +1,169 @@
 .payment {
+  min-height: calc(100vh - 120px);
   background-color: #ebedee;
   display: flex;
-  align-items: center;
   flex-direction: column;
-  padding: 30px;
-  height: calc(100vh - 120px);
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.payment * {
+  box-sizing: border-box;
 }
 
 .payment section {
-  width: 800px;
-  background-color: white;
-  padding: 30px;
+  width: 100%;
+  max-width: 720px;
+  background-color: #ffffff;
+  padding: 32px;
 }
 
 .payment section:first-child {
-  border-bottom: 1px solid lightgrey;
+  border-bottom: 1px solid #e9e9e9;
+  border-radius: 8px 8px 0 0;
+}
+
+.payment section:last-child {
+  border-radius: 0 0 8px 8px;
 }
 
 .payment h1 {
-  margin-bottom: 40px;
+  margin: 0 0 32px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #222222;
 }
 
 .payment section > div {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.payment section > div p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.payment section:first-child > div p:first-child {
+  color: #666666;
+}
+
+.payment section:first-child > div p:last-child {
+  color: #222222;
+  font-weight: 500;
+}
+
+.payment section:last-child > div {
+  padding-top: 8px;
+  margin-bottom: 28px;
+}
+
+.payment section:last-child > div p:first-child,
+.payment section:last-child > div p:last-child {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.payment .purchase-label {
+  margin: 0 0 28px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444444;
+  text-align: left;
 }
 
 .payment span {
-  font-weight: bold;
+  font-weight: 700;
+  color: #111111;
 }
-.payment .purchase-label {
-  margin-bottom: 20px;
-  text-align: justify;
+
+/* Améliore l'intégration visuelle du formulaire Stripe */
+.payment form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.payment button {
+  min-height: 44px;
+  border: none;
+  border-radius: 6px;
+  background-color: #09b1ba;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.payment button:hover {
+  background-color: #078d95;
+}
+
+.payment button:active {
+  transform: scale(0.98);
+}
+
+.payment button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .payment {
+    padding: 24px 12px;
+  }
+
+  .payment section {
+    padding: 24px 18px;
+  }
+
+  .payment h1 {
+    font-size: 21px;
+    margin-bottom: 24px;
+  }
+
+  .payment section > div {
+    margin-bottom: 14px;
+  }
+
+  .payment section > div p {
+    font-size: 15px;
+  }
+
+  .payment section:last-child > div p:first-child,
+  .payment section:last-child > div p:last-child {
+    font-size: 17px;
+  }
+
+  .payment .purchase-label {
+    font-size: 15px;
+    margin-bottom: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment section > div {
+    gap: 10px;
+  }
+
+  .payment section > div p:first-child,
+  .payment section > div p:last-child {
+    font-size: 14px;
+  }
+
+  .payment h1 {
+    font-size: 19px;
+  }
+
+  .payment .purchase-label {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

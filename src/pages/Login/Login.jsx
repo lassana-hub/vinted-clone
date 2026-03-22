@@ -41,15 +41,15 @@ const Login = ({ setIsConnected }) => {
         Cookies.set("userToken", response.data.token);
         // on change le state de connection (pour l'affichage dans le header) :
         setIsConnected(true);
-
+        navigate("/");
         // optimisation via une fonction :
         // handleToken(response.data.token);
 
-        if (location.state) {
-          navigate(location.state.from);
-        } else {
-          navigate("/");
-        }
+        // if (location.state) {
+        //   navigate(location.state.from);
+        // } else {
+        //   navigate("/");
+        // }
       }
     } catch (error) {
       if (error.response) {
